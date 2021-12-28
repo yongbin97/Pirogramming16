@@ -5,10 +5,23 @@
 /* div만 tag를 생략가능 */
 
 /* 자식 */
-div#header-search > h1 {
-    width: 280px;
+div#header-search  h1 {
+    width: 198px;
+    height: 48px;
     display: inline-block;
+    background-image: url(./logo.png);
+    background-position: 1px, 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-indent: 101%;
+    overflow: hidden;
 }
+
+#header-search h1 span{
+    display: none;
+}
+
+
 /* 자손
 #header-center h1 {
 
@@ -20,8 +33,15 @@ div#header-search > h1 {
 }
  
 #header-search fieldset{
-    width: 520px;
+    width: 474px;
+    height: 50px;
     display: inline-block;
+
+    margin-left: 20px;
+    padding: 13px 15px;
+    border: 2px solid #03cf5d;
+
+
 }
 
 /* screen reader에는 읽히나, 화면에는 표현되지 않는 blind 특성 */
