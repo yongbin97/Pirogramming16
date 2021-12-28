@@ -16,9 +16,20 @@ div#header-search > h1 {
 
 #header-search h2 {
     display: none;
+    /* screen reader에도 읽히지 않음 */
 }
-
+ 
 #header-search fieldset{
     width: 520px;
     display: inline-block;
+}
+
+/* screen reader에는 읽히나, 화면에는 표현되지 않는 blind 특성 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
 }
