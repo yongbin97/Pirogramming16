@@ -53,7 +53,25 @@ div#header-search  h1 {
     border: none;
     padding: 0;
     outline: none;
+}
 
+#header-search fieldset button{
+    width: 49px;
+    height: 49px;
+    border: none;
+    padding: 0;
+    background: #03cf5d;
+    
+
+}
+
+#search-image{
+    background-image: url(./sp_search.png);
+    background-position: -2px -60px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
 }
 
 /* screen reader에는 읽히나, 화면에는 표현되지 않는 blind 특성 */
