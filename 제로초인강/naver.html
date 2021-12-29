@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            <div class = "center"-align> <!-- 가운데 정렬용 div-->
+            <div class = "center-align"> <!-- 가운데 정렬용 div-->
                 <!-- inline style -->
                 <div id="header-top">
                     <span>네이버를 시작페이지로 > |</span>
@@ -36,7 +36,12 @@
         </header>
 
         <nav>
-            <div class="center-align">
+            <div class="center-align relative">
+                <div id="search-ranking">
+                    <h2 class="blind">실시간 검색어</h2>
+                    <span id="rank-number">1</span>
+                    <span id="rank-title">Pirogramming</span>
+                </div>
                 <ul>
                     <li><a href=""> <span class="nav-item-mail"> </span> <span class = "blind">메일</span> </a> </li>
                     <li><a href=""> <span> </span> <span class = "blind">카페</span> </a></li>
@@ -46,10 +51,11 @@
                     <li><a href=""> <span> </span> <span class = "blind">네이버페이</span> </a></li>
                     <li><a href=""> <span> </span> <span class = "blind">네이버쇼핑</span> </a></li>
                 </ul>
+                <div class="nav-divider"></div>
             </div>
+            
         </nav>
         <main>
-            <h2>실시간 검색어</h2>
             <h3>연합뉴스</h3>
             <ol>
                 <li>뉴스1</li>
