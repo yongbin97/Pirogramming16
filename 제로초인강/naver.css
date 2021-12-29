@@ -299,6 +299,8 @@ nav li.more:first-child span:first-child {
     font-size: 14px;
 }
 
+/*-------------------------------------------------------------------------------------------*/
+
 main{
     display: inline-block;
     width: 100%;
@@ -311,13 +313,14 @@ main{
     
 }
 
-
-
 #main-ad{
     display: inline-block;
     width: 740px;
     height: 120px;
     background: #555;
+
+    margin-bottom: 8px;
+    margin-right: 8px;
 }
 
 #main-login{
@@ -326,6 +329,9 @@ main{
     height: 120px;
     vertical-align: top;
     background: white;
+
+    margin-bottom: 8px;
+
 }
 
 #main-ytn{
@@ -333,6 +339,9 @@ main{
     width: 740px;
     height: 46px;
     background: white;
+
+    margin-bottom: 8px;
+    margin-right: 8px;
 }
 
 #main-newstand{
@@ -340,6 +349,9 @@ main{
     width: 740px;
     height: 246px;
     background: white;
+
+    margin-bottom: 8px;
+    margin-right: 8px;
 }
 
 #main-weather{
@@ -347,6 +359,9 @@ main{
     width: 332px;
     height: 142px;
     background: white;
+
+    margin-bottom: 8px;
+
 }
 
 #main-second-ad{
@@ -355,6 +370,8 @@ main{
     height: 246px;
     background: #555;
 
+    margin-bottom: 8px;
+    margin-right: 8px;
 }
 
 #main-category{
@@ -362,6 +379,9 @@ main{
     width: 740px;
     height: 837px;
     background: white;
+
+    margin-bottom: 8px;
+    margin-right: 8px;
 }
 
 #main-shopping{
@@ -369,6 +389,9 @@ main{
     width: 332px;
     height: 837px;
     background: white;
+
+    margin-bottom: 8px;
+
 }
 
 #main-event{
@@ -377,6 +400,9 @@ main{
     height: 130px;  
     background: white;
     vertical-align: top;
+
+    margin-bottom: 8px;
+    margin-right: 8px;
 }
 
 #main-third-ad{
@@ -384,5 +410,8 @@ main{
     width: 332px;
     height: 130px;
     background-color: #555;
+
+    margin-bottom: 8px;
+
 }
 
