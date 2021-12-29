@@ -9,6 +9,11 @@ html, body{
     font-family: BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
 }
 
+main{
+    display: inline-block;
+    width: 100%;
+}
+
 #fixed {
     position: fixed;
     top: 50px;
