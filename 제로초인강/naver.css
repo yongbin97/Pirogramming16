@@ -9,6 +9,9 @@ html, body{
     font-family: BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
 
 
 #fixed {
@@ -51,7 +54,10 @@ header{
 
 #header-search{
     clear: both;
+    padding-top: 45px;
 }
+
+
 div#header-search  h1 {
     width: 198px;
     height: 48px;
@@ -313,7 +319,13 @@ main{
     
 }
 
+#main-first-block{
+    display: inline-block;
+    width:100%;
+}
+
 #main-ad{
+    float: left;
     display: inline-block;
     width: 740px;
     height: 120px;
@@ -324,6 +336,7 @@ main{
 }
 
 #main-login{
+    float: left;
     display: inline-block;
     width: 332px;
     height: 120px;
@@ -334,6 +347,24 @@ main{
 
 }
 
+#main-second-block{
+    display: inline-block;
+    width:100%;
+}
+
+.inline-block{
+    display:inline-block;
+}
+
+#main-second-block .inline-block:first-child{
+    width: 740px;
+}
+
+#main-second-block .inline-block:last-child{
+    width: 332px;
+    vertical-align: top;
+}
+
 #main-ytn{
     display: inline-block;
     width: 740px;
@@ -342,6 +373,37 @@ main{
 
     margin-bottom: 8px;
     margin-right: 8px;
+}
+
+#main-ytn h3, 
+#main-ytn ol{
+    display: inline-block;
+}
+
+#main-newstand h3{
+    height: 45px;
+    border-bottom: 1px solid #ebeef3;
+}
+
+#main-newstand ul{
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#main-newstand li{
+    float: left;
+    width: 123px;
+    height: 67px;
+    border-right: 1px solid #f1f3f6;
+    border-bottom: 1px solid #f1f3f6;
+    text-align: center;
+}
+
+#main-newstand li img{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #main-newstand{
@@ -366,16 +428,21 @@ main{
 
 #main-second-ad{
     display: inline-block;
-    width: 740px;
-    height: 246px;
+    width: 332px;
+    height: 150px;
     background: #555;
 
     margin-bottom: 8px;
     margin-right: 8px;
 }
 
-#main-category{
+#main-third-block{
     display: inline-block;
+    width: 100%
+}
+
+#main-category{
+    float: left;
     width: 740px;
     height: 837px;
     background: white;
@@ -385,7 +452,7 @@ main{
 }
 
 #main-shopping{
-    display: inline-block;
+    float: left;
     width: 332px;
     height: 837px;
     background: white;
@@ -394,8 +461,13 @@ main{
 
 }
 
-#main-event{
+#main-fourth-block{
     display: inline-block;
+    width: 100%
+}
+
+#main-event{
+    float: left;
     width: 740px;
     height: 130px;  
     background: white;
@@ -406,7 +478,7 @@ main{
 }
 
 #main-third-ad{
-    display: inline-block;
+    float: left;
     width: 332px;
     height: 130px;
     background-color: #555;
