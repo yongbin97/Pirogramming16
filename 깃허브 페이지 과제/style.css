@@ -154,8 +154,15 @@ main{
     width: 95%;
     height: 40px;
     border: 1px solid rgb(173, 172, 172);
-    border-radius: 5px;;
+    border-radius: 5px;
 }
+.signup-text:not(placeholder-shown){
+    background: rgb(180, 206, 255);
+}
+.signup-text:placeholder-shown{
+    background:white;
+}
+
 
 #signup-explain, #signup-bottom{
     font-size: 14px;
