@@ -25,8 +25,24 @@ html, body{
     margin: 0 auto;
     width: 1080px;
 }
+
+#header-top {
+    float: right;
+}
+
+#header-top span    {
+    color: #888;
+    letter-spacing: -1px;
+    font-size: 11px;
+    line-height: 22px;
+}
+
 /* div만 tag를 생략가능 */
 /* 자식 */
+
+#header-search{
+    clear: both;
+}
 div#header-search  h1 {
     width: 198px;
     height: 48px;
