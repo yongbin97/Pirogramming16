@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
         <link rel="stylesheet" href = "./naver.css">
+        <link rel="stylesheet" href="./webfont.css">
+        <style>
+            /* 실무상의 이유로 필수적인 요소들을 html에 직접적으로 사용가능 */
+        </style>
         <title>NAVER</title>
     </head>
     <body>
@@ -123,8 +127,8 @@
         <main>
             <div id="main-centered" class="center-align">
                 <div id="main-first-block">
-                    <div id="main-ad"></div>
-                    <div id="main-login">
+                    <section id="main-ad"></section>
+                    <section id="main-login">
                         <h3 class="blind">로그인</h3>
                         <div class="login-wrapper">
                             <span class="login-text">네이버를 더 안전하고 편리하게 이용하세요</span>
@@ -134,18 +138,18 @@
                             </a>
                             <a class="login-signup" href="https://nid.naver.com/nidregister.form?url=https%3A%2F%2Fwww.naver.com">회원가입</a>
                         </div>
-                    </div>
+                    </section>
 
                 </div>
                 <div id="main-second-block">
                     <div class="float-left">
-                        <div id="main-ytn">
+                        <section id="main-ytn">
                             <h3>연합뉴스</h3>
                             <ol>
                                 <li>뉴스뉴스뉴스뉴스뉴스</li>
                             </ol>
-                        </div>
-                        <div id="main-newstand">
+                        </section>
+                        <section id="main-newstand">
                             <h3>뉴스 스탠드</h3>
         
                             <ul>
@@ -168,7 +172,7 @@
                                 <li><img src="./파이낸셜뉴스.png" alt="파이낸셜뉴스" /></li>
                                 <li><img src="./한국경제TV.png" alt="한국경제TV" /></li>
                             </ul>
-                        </div>
+                        </section>
                     </div>
                     <div class="float-left">
                         <div id="main-weather"></div>
@@ -177,7 +181,7 @@
                 </div>
 
                 <div id="main-third-block">
-                    <div id="main-category">
+                    <section id="main-category">
                         <h3 class="blind">주제별 보기</h3>
                         <div id="main-category-top">
                             <button id="subject-all">
@@ -213,18 +217,19 @@
                                 <span></span>
                             </button>
                         </div>
-                    </div>
-                    <div id="main-shopping">
-                        <iframe src="https://www.naver.com/shoppingbox/shoppingboxnew/main.nhn?domain=N" frameborder="0" scrolling= "no"></iframe>
-                    </div>
+                    </section>
+                    <section id="main-shopping">
+                        <iframe src="https://www.naver.com/shoppingbox/shoppingboxnew/main.nhn?domain=N" scrolling= "no"></iframe>
+                    </section>
                 </div>
                 <div id="main-fourth-block">
-                    <div id="main-event">
+                    <section id="main-event">
                         <h3>이벤트</h3>
-                    </div>
-                    <div id="main-third-ad">
+                    </section>
+                    <section id="main-third-ad">
+                        <h3 class="blind">광거</h3>
                         <div></div>
-                    </div>
+                    </section>
                 </div>
 
             </div>
