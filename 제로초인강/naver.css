@@ -21,12 +21,11 @@ html, body{
 
 }
 
-#header-center{
+.center-align{
     margin: 0 auto;
     width: 1080px;
 }
 /* div만 tag를 생략가능 */
-
 /* 자식 */
 div#header-search  h1 {
     width: 198px;
@@ -50,26 +49,26 @@ div#header-search  h1 {
 
 /* 자손
 #header-center h1 {
-
+    
 } */
 
 #header-search h2 {
     display: none;
     /* screen reader에도 읽히지 않음 */
 }
- 
+
 #header-search fieldset{
     width: 474px;
     height: 50px;
     display: inline-block;
-
+    
     margin-left: 20px;
     padding: 13px 15px;
     border: 2px solid #03cf5d; /* hex 표기법 */
     vertical-align: middle;
 
     position: relative;
-
+    
 }
 
 #header-search fieldset input{
@@ -92,7 +91,7 @@ div#header-search  h1 {
     right: -1px;
 
     
-
+    
 }
 
 #search-image{
@@ -112,4 +111,51 @@ div#header-search  h1 {
     height: 1px;
     margin: -1px;
     overflow: hidden;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li{
+    display: inline-block;
+}
+
+nav li span:first-child{
+    height: 16px;
+    background-image: url(./sp_nav.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+nav li:first-child span:first-child{
+    width:25px;
+    background-position: 0 -285px;
+}
+
+nav li:nth-child(2) span:first-child{
+    width:27px;
+    background-position: -279px -52px;
+}
+
+nav li:nth-child(3) span:first-child{
+    width:40px;
+    background-position: -100px -182px;
+}
+
+nav li:nth-child(4) span:first-child {
+    width: 40px;
+    background-position: -101px -156px;
+}
+
+nav li:nth-child(5) span:first-child {
+    width: 26px;
+    background-position: -279px -156px;
+}
+
+nav li:nth-child(6) span:first-child {
+    width: 25px;
+    background-position: -70px -285px;
 }
