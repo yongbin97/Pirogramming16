@@ -1,0 +1,20 @@
+:root{
+    --dark-gray: rgb(52, 58, 61);
+}
+html, body{
+    height: 100%;
+}
+
+ul, li{
+    list-style: none;
+    padding: 0;
+}
+
+
+
+nav, #hightlights-section, #gallery-section, #about-modal .modal-content{
+    background: var(--dark-gray);
+}  
+.nav-link:hover{
+    color: white;
+}
