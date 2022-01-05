@@ -13,4 +13,6 @@ while(flag):
     
     except:
         print("정수를 입력하세요.")
-    
+
+for i in range(inputValue):
+    print("playerA: {}".format(i+1))
