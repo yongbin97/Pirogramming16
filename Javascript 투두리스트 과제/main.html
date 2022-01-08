@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">    
+    <script defer src="toDo.js"></script>
+</head>
+<body class="center-align">
+    <section>
+        <header>
+            <h1>피로그래밍 과제 리스트</h1>
+        </header>
+        <main>
+            <div class="append-div">
+                <input type="text" id="appendList">
+                <button type="button" id="add_btn">추가</button>
+            </div>
+            <div class="todo_list">
+                <ul id="todo_ul">
+                    <li id="first-li">
+                        <div class="check-box">
+                            <i class="far fa-check-square"></i>
+                        </div>
+                        <div class="todo-content">
+                            오늘 할 과제
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            </button>
+        </main>
+        <footer class="btns">
+            <button type="button" id="select_del">
+                선택 과제 삭제
+            </button>
+            <button type="button" id="last_del">
+                마지막 과제 삭제
+            </button>
+            <button type="button" id="all_del">
+                전체 삭제
+            </button>
+        </footer>
+    </section>
+</body>
+</html>
