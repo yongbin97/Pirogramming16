@@ -1,9 +1,11 @@
+from atexit import register
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Review
 from .form import PostForm
 
+
 def review_list(request):
-    reviews = Review.objects.all()
+    reviews = Review.objects.all().order_by('-rate')
     ctx = {'reviews': reviews}
 
     return render(request, template_name = 'list.html', context = ctx)
@@ -47,3 +49,4 @@ def review_delete(request, pk):
     review.delete()
 
     return redirect('review:list')
+

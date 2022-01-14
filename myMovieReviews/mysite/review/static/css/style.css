@@ -30,6 +30,7 @@ body{
 /* list.html */
 .review{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .content{

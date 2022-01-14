@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load time_format%}
 
 {% block content %}
     <div class="detail">
@@ -10,8 +11,8 @@
             <h4>개봉년도: {{review.year}}</h4>
             <h4>감독: {{review.director}}</h4>
             <h4>장르: {{review.genre}}</h4>
-            <h4>별정: {{review.rate}}</h4>
-            <h4>러닝타임: {{review.time}}</h4>
+            <h4>별점: {{review.rate}}</h4>
+            <h4>러닝타임: {{review.time|time_format}}</h4>
             <div class="detail_review">
                 {{review.content}}
             </div>
