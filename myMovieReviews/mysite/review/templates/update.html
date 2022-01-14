@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="" method = "POST">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-
-    <input type="submit" value="저장하기" />
-</form>
+<div class="center-align update">
+    <form action="" method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+    
+        <input class="submit_btn" type="submit" value="저장하기" />
+    </form>
+</div>
 {% endblock %}

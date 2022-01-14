@@ -17,8 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 
+#for image
+from django.conf.urls.static import static
+from django.conf import settings
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('review/', include('review.urls')),
     # path('', view = views.main, name ='main'),
  ]
+#set image urls
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

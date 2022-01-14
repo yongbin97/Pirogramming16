@@ -7,6 +7,7 @@
 body{
     background-color: rgb(0 0 0 / 79%);
     color: white;
+    font-family: 'Jua', sans-serif;
 }
 
 .header {
@@ -26,11 +27,110 @@ body{
     padding-top: 5px;
 }
 
-.content-container{
+/* list.html */
+.review{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .content{
     display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(142, 199, 245, 0.568);
+    border-radius: 15px;
+}
+.photo{
+    text-align: center;
+}
+.explain{
     padding: 20px;
+}
+
+.explain h2{
+    font-size: 30px;
+    padding: 5px;
+}
+.explain > h5{
+    padding: 3px;
+    text-indent: 5px;
+}
+
+/* detail.html */
+.detail{
+    display: flex;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.detail_content{
+    padding: 20px;
+}
+
+.detail_content h1{
+    font-size: 50px;
+}
+
+.detail_content h4{
+    font-size: 25px;
+    padding: 10px;
+}
+
+.detail_review{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.btns{
+    padding: 10px;
+}
+
+.btns a{
+    background-color: rgba(142, 199, 245, 0.568);
+    padding: 5px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+/* update */ 
+.update{
+    position: relative;
+}
+
+.update form{
+    position: absolute;
+    transform: translate(65%, 10%);
+}
+
+.update th, .update td{
+    padding: 5px;
+}
+
+.update table input{
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+.update table textarea{
+    border: none;
+    border-radius: 5px;
+}
+
+.update table tr:last-child label{
+    display: none
+}
+
+.submit_btn{
+    background-color: rgba(142, 199, 245, 0.568);
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    position: absolute;
+    transform: translate(700%, 12px);
+    color: white;
+    font-family: 'Jua', sans-serif;
+}
+
+#photo-clear_id{
+    display: none;
 }

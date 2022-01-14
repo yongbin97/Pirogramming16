@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
+{% load time_format%}
 
 {% block content %}
-    <h1>{{review.title}}</h1>
     <div class="detail">
-        <h4>개봉년도: {{review.year}}</h4>
-        <h4>감독: {{review.director}}</h4>
-        <h4>장르: {{review.genre}}</h4>
-        <h4>별정: {{review.rate}}</h4>
-        <h4>러닝타임: {{review.time}}</h4>
+        {% if review.photo %}
+            <img src = "{{ review.photo.url }}" alt="" height="500">
+        {% endif %}
+        <div class="detail_content">
+            <h1>{{review.title}}</h1>
+            <h4>개봉년도: {{review.year}}</h4>
+            <h4>감독: {{review.director}}</h4>
+            <h4>장르: {{review.genre}}</h4>
+            <h4>별점: {{review.rate}}</h4>
+            <h4>러닝타임: {{review.time|time_format}}</h4>
+            <div class="detail_review">
+                {{review.content}}
+            </div>
+            <div class="btns">
+                <a href="{% url 'review:update' review.id %}">수정하기</a>
+                <a href="{% url 'review:delete' review.id %}">삭제하기</a>
+            </div>
+        </div>
     </div>
-    <div class="content">
-        {{review.content}}
-    </div>
-    <div class="btns">
-        <a href="{% url 'review:update' review.id %}">수정하기</a>
-        <a href="{% url 'review:delete' review.id %}">삭제하기</a>
-    </div>
-
+        
 {% endblock %}

@@ -5,11 +5,17 @@
     <div class="review">
         {% for review in reviews %}
         <div class="content">
-            
-            <h2><a href="{% url 'review:detail' review.id %}">{{review.title}}</a></h2>
-            <h5>개봉년도: {{review.year}}</h5>
-            <h5>장르: {{review.genre}}</h5>
-            <h5>별점: {{review.rate}}</h5>
+            {% if review.photo %}
+            <div class="photo">
+                <img src = "{{ review.photo.url }}" alt="" height="300">
+            </div>
+            {% endif %}
+            <div class="explain">
+                <h2><a href="{% url 'review:detail' review.id %}">{{review.title}}</a></h2>
+                <h5>개봉년도: {{review.year}}</h5>
+                <h5>장르: {{review.genre}}</h5>
+                <h5>별점: {{review.rate}}</h5>
+            </div>
         </div>
         {% endfor %}
     </div>
