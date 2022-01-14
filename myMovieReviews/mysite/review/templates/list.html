@@ -4,10 +4,13 @@
 {% block content %}
     <div class="review">
         {% for review in reviews %}
-        <h2><a href="{% url 'review:detail' review.id %}">제목: {{review.title}}</a></h2>
-        <h5>개봉년도: {{review.year}}</h5>
-        <h5>장르: {{review.genre}}</h5>
-        <h5>별점: {{review.rate}}</h5>
+        <div class="content">
+            
+            <h2><a href="{% url 'review:detail' review.id %}">{{review.title}}</a></h2>
+            <h5>개봉년도: {{review.year}}</h5>
+            <h5>장르: {{review.genre}}</h5>
+            <h5>별점: {{review.rate}}</h5>
+        </div>
         {% endfor %}
     </div>
 {% endblock %}
