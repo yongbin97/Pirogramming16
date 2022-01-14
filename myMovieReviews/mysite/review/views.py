@@ -15,7 +15,7 @@ def review_detail(request, pk):
 
 def review_create(request):
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
         return redirect('review:list')
@@ -30,7 +30,7 @@ def review_update(request, pk):
     review = get_object_or_404(Review, id=pk)
 
     if request.method == 'POST':
-        form = PostForm(request.POST, instance = review)
+        form = PostForm(request.POST, request.FILES, instance = review)
         if form.is_valid():
             review = form.save(commit=False)
             review.save()

@@ -11,6 +11,8 @@ class Review(models.Model):
     director = models.CharField(verbose_name='감독', max_length=20)
     actor = models.CharField(verbose_name='배우', max_length=20)
 
+    photo = models.ImageField(verbose_name='사진', blank=True, null=True, upload_to="")
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
