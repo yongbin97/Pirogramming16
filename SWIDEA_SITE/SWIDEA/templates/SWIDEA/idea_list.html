@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="ideaList">
+    <div>
+        <h2>Idea List</h2>
+        <h6>나의 아이디어를 잊지말고 기록해보세요</h6>
+    </div>
+    {% for idea in ideaList %}
+    <div class="content">
+        {% if idea.photo %}
+        <div class="photo">
+            <img src="{{ idea.photo.url }}" height='300' alt="">
+        </div>
+        {% endif %}
+        <div class="explain">
+            <h2><a href="{% url 'SWIDEA:idea_detail' pk=idea.pk %}">{{idea.title}}</a></h2>
+            <h5>예상 개발 툴: {{ idea.develop.title }}</h5>
+            <div>
+                <h5>아이디어 관심도: {{idea.rate}}</h5>
+                <a href="#"><i class="far fa-plus-square"></i></a>
+                <a href="#"><i class="far fa-minus-square"></i></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

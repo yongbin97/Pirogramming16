@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>My SW Idea Management</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'SWIDEA:idea_list' %}">My SW Idea Management</a></h1>
+        <div class="sub">
+            <h3><a href="{% url 'SWIDEA:idea_new' %}">아이디어 등록</a></h3>
+            <h3><a href="{% url 'SWIDEA:idea_list' %} ">아이디어 관리</a></h3>
+            <h3><a href="{% url 'SWIDEA:dev_new' %}">개발툴 등록</a></h3>
+            <h3><a href="{% url 'SWIDEA:dev_list' %}">개발툴 관리</a></h3>
+        </div>
+    </header>
+    <div class="center-align">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
