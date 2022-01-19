@@ -16,7 +16,7 @@
             <h2>{{idea.title}}</h2>
             <h5>1) 아이디어 관심도: {{idea.rate}}</h5>
             <h5>2) 예상 개발 툴: <br/>
-                <a href="#">{{ idea.develop.title }}</a></h5>
+                <a href="{% url 'SWIDEA:dev_detail' idea.develop.pk%}">{{ idea.develop.title }}</a></h5>
             <h5>3) 아이디어 설명:</h5>
             <h5>{{idea.content}}</h5>
         </div>

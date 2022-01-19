@@ -13,7 +13,7 @@
             <h5>{{dev.content}}</h5>
             <h4>>만들 수 있는 SW목록</h4>
             {% for val in idea.values %}
-                <h6>{{val.title}}</h6>
+                <h6><a href="{% url 'SWIDEA:idea_detail' val.id %}">{{val.title}}</a></h6>
             {% endfor %}
         </div>
         <div class="dev_detail_footer">
