@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="ideaDetail">
-    <div>
+<section class="text_center">
+    <div class="subHeader">
         <h2>Idea Detail</h2>
         <h6>아이디어 세부페이지</h6>
     </div>
-    <div class="content">
+    <div class="detail_content">
         {% if idea.photo %}
-        <div class="photo">
-            <img src="{{ idea.photo.url }}" height='300' alt="">
+        <div class="detail_photo">
+            <img src="{{ idea.photo.url }}" alt="">
         </div>
         {% endif %}
         <div class="idea_detail">
@@ -18,13 +18,13 @@
             <h5>2) 예상 개발 툴: <br/>
                 <a href="{% url 'SWIDEA:dev_detail' idea.develop.pk%}">{{ idea.develop.title }}</a></h5>
             <h5>3) 아이디어 설명:</h5>
-            <h5>{{idea.content}}</h5>
-        </div>
-        <div class="detail_footer">
-            <a href="{% url 'SWIDEA:idea_delete' idea.pk %}">삭제</a>
-            <a href="{% url 'SWIDEA:idea_list' %}">목록</a>
-            <a href="{% url 'SWIDEA:idea_update' idea.pk %}">수정</a>
+            <h6>{{idea.content}}</h6>
         </div>
     </div>
+        <div class="detail_footer">
+            <a class="detail_delete" href="{% url 'SWIDEA:idea_delete' idea.pk %}">삭제</a>
+            <a class="detail_list" href="{% url 'SWIDEA:idea_list' %}">목록</a>
+            <a class="detail_update" href="{% url 'SWIDEA:idea_update' idea.pk %}">수정</a>
+        </div>
 </section>
 {% endblock %}

@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="devDetail">
-    <div>
+<section class="text_center">
+    <div class="subHeader">
         <h2>DevTool Detail</h2>
         <h6>개발툴 세부내용 페이지 입니다. 자신이 다룰 수 있는 개발툴에 대한 상세 내용을 확인해보아요.</h6>
     </div>
-    <div class="content">
-        <div class="dev_detail">
+    <div class="content dev_detail">
+        <div class="dev_detail text_left">
             <h2>{{dev.title}}</h2>
-            <h5>{{dev.cate}}</h5>
+            <h4>{{dev.cate}}</h4>
             <h5>{{dev.content}}</h5>
-            <h4>>만들 수 있는 SW목록</h4>
+            <h4> > 만들 수 있는 SW목록</h4>
             {% for val in idea.values %}
                 <h6><a href="{% url 'SWIDEA:idea_detail' val.id %}">{{val.title}}</a></h6>
             {% endfor %}
         </div>
-        <div class="dev_detail_footer">
-            <a href="{% url 'SWIDEA:dev_delete' dev.pk %}">삭제</a>
-            <a href="{% url 'SWIDEA:dev_list' %}">목록</a>
-            <a href="{% url 'SWIDEA:dev_update' dev.pk %}">수정</a>
+        <div class="detail_footer">
+            <a class="detail_delete" href="{% url 'SWIDEA:dev_delete' dev.pk %}">삭제</a>
+            <a class="detail_list" href="{% url 'SWIDEA:dev_list' %}">목록</a>
+            <a class="detail_update" href="{% url 'SWIDEA:dev_update' dev.pk %}">수정</a>
         </div>
     </div>
 </section>

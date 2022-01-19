@@ -1,12 +1,17 @@
+
 {% extends 'base.html' %}
 {% block content%}
-<div>
-    <h2>Idea Register</h2>
-    <h6>아이디어 등록 페이지입니다. 당신의 아이디어를 잊지말고 등록하세요</h6>
-</div>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type = 'submit'>Submit</button>
-</form>
+<section class="text_center">
+    <div class="subHeader">
+        <h2>Idea Register</h2>
+        <h6>아이디어 등록 페이지입니다. 당신의 아이디어를 잊지말고 등록하세요</h6>
+    </div>
+    <form class="form text_left" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type = 'submit'>Submit</button>
+    </form>
+</section>
 {% endblock%}

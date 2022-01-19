@@ -1,28 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="ideaList">
-    <div>
+<section class="text_center">
+    <div class="subHeader">
         <h2>Idea List</h2>
         <h6>나의 아이디어를 잊지말고 기록해보세요</h6>
     </div>
-    {% for idea in ideaList %}
-    <div class="content">
-        {% if idea.photo %}
-        <div class="photo">
-            <img src="{{ idea.photo.url }}" height='300' alt="">
-        </div>
-        {% endif %}
-        <div class="explain">
-            <h2><a href="{% url 'SWIDEA:idea_detail' pk=idea.pk %}">{{idea.title}}</a></h2>
-            <h5>예상 개발 툴: {{ idea.develop.title }}</h5>
-            <div>
-                <h5 id="count-{{ idea.id }}">아이디어 관심도: {{idea.rate}}</h5>
-                <button class="btn_plus" name="{{ idea.id }}"><i class="far fa-plus-square"></i></button>
-                <button class="btn_minus" name="{{ idea.id }}"><i class="far fa-minus-square"></i></button>
+    <div class="flex_container">
+        {% for idea in ideaList %}
+        <div class="content">
+            {% if idea.photo %}
+            <div class="photo">
+                <img src="{{ idea.photo.url }}" alt="">
+            </div>
+            {% endif %}
+            <div class="explain">
+                <h2><a href="{% url 'SWIDEA:idea_detail' pk=idea.pk %}">{{idea.title}}</a></h2>
+                <h5>예상 개발 툴: <em>{{ idea.develop.title }}</em></h5>
+                <div class="btns">
+                    <h5 id="count-{{ idea.id }}">아이디어 관심도: {{idea.rate}}</h5>
+                    <button class="btn_plus" name="{{ idea.id }}"><i class="far fa-plus-square fa-2x"></i></button>
+                    <button class="btn_minus" name="{{ idea.id }}"><i class="far fa-minus-square fa-2x"></i></button>
+                </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </section>
 
 <script type="text/javascript">

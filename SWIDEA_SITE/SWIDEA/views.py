@@ -116,9 +116,6 @@ def idea_plus(request):
     ctx = {'idea_rate': idea.rate}
     return JsonResponse(ctx)
 
-
-
-
 def idea_minus(request):
     pk = request.POST.get('pk', None)
     idea = get_object_or_404(Idea, pk=pk)

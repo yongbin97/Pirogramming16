@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% block content%}
-<div>
-    <h2>Idea Detail Update</h2>
-    <h6>아이디어 세부내용 수정페이지입니다. 아이디어를 구체화하거나 내용을 변경해보아요.</h6>
-</div>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type = 'submit'>Submit</button>
-</form>
+<section class="text_center">
+    <div class="subHeader">
+        <h2>Idea Detail Update</h2>
+        <h6>아이디어 세부내용 수정페이지입니다. 아이디어를 구체화하거나 내용을 변경해보아요.</h6>
+    </div>
+    <form class="form text_left" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type = 'submit'>Submit</button>
+    </form>
+</section>
 {% endblock%}
