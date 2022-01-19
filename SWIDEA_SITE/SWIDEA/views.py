@@ -1,6 +1,11 @@
+from http.client import HTTPResponse
+from pickle import NONE
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import *
+import json
+from django.http import JsonResponse
+from django.core import serializers
 
 # Create your views here.
 
@@ -97,3 +102,29 @@ def dev_delete(request, pk):
     dev.delete()
 
     return redirect('SWIDEA:dev_list')
+
+
+###############################################################################
+
+def idea_plus(request):
+    pk = request.POST.get('pk', None)
+    idea = get_object_or_404(Idea, pk=pk)
+
+    idea.rate += 1
+    idea.save()
+
+    ctx = {'idea_rate': idea.rate}
+    return JsonResponse(ctx)
+
+
+
+
+def idea_minus(request):
+    pk = request.POST.get('pk', None)
+    idea = get_object_or_404(Idea, pk=pk)
+
+    idea.rate -= 1
+    idea.save()
+
+    ctx = {'idea_rate': idea.rate}
+    return JsonResponse(ctx)

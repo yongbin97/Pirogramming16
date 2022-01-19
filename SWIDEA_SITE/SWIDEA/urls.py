@@ -14,5 +14,6 @@ urlpatterns = [
     path('dev/new/', views.dev_new, name="dev_new"),
     path('dev/<int:pk>/update/', views.dev_update, name='dev_update'),
     path('dev/<int:pk>/delete/', views.dev_delete, name='dev_delete'),
-
+    path('idea/plus/', views.idea_plus, name='idea_plus'),
+    path('idea/minus/', views.idea_minus, name='idea_minus'),
 ]

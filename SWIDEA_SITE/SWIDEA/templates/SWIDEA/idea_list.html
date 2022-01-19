@@ -16,12 +16,39 @@
             <h2><a href="{% url 'SWIDEA:idea_detail' pk=idea.pk %}">{{idea.title}}</a></h2>
             <h5>예상 개발 툴: {{ idea.develop.title }}</h5>
             <div>
-                <h5>아이디어 관심도: {{idea.rate}}</h5>
-                <a href="#"><i class="far fa-plus-square"></i></a>
-                <a href="#"><i class="far fa-minus-square"></i></a>
+                <h5 id="count-{{ idea.id }}">아이디어 관심도: {{idea.rate}}</h5>
+                <button class="btn_plus" name="{{ idea.id }}"><i class="far fa-plus-square"></i></button>
+                <button class="btn_minus" name="{{ idea.id }}"><i class="far fa-minus-square"></i></button>
             </div>
         </div>
     </div>
     {% endfor %}
 </section>
+
+<script type="text/javascript">
+    $(".btn_plus").click(function(){
+        var pk = $(this).attr("name")
+        $.ajax({
+            type: "POST",
+            url: "{% url 'SWIDEA:idea_plus' %}",    
+            data: {'pk': pk, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+            dataType: "json",
+            success: function(response){
+                $("#count-"+pk).text("아이디어 관심도: " + response['idea_rate'])
+            }
+        })
+    })
+    $(".btn_minus").click(function(){
+        var pk = $(this).attr("name")
+        $.ajax({
+            type: "POST",
+            url: "{% url 'SWIDEA:idea_minus' %}",
+            data: {'pk': pk, 'csrfmiddlewaretoken': '{{ csrf_token }}'},
+            dataType: "json",
+            success: function(response){
+                $("#count-"+pk).text("아이디어 관심도: " + response['idea_rate'])
+            }
+        })
+    })
+</script>
 {% endblock %}
