@@ -18,15 +18,12 @@ def like(request):
     req = json.loads(request.body)
     id = req['id']
     type = req['type']
-
     post = Post.objects.get(id = id)
 
     if type == 'like':
         post.like += 1
     else:
         post.like -= 1
-    
     post.save()
-
     return JsonResponse({'id': id, 'type': type})
 

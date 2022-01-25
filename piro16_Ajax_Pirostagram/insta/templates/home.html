@@ -24,8 +24,13 @@
             <div class="dislike-{{post.id}}" onclick="onClickLike({{post.id}}, 'dislike')" style="display: none">
                 <i class="fas fa-heart"></i> <span>{{post.like}}</span>
             </div>
-            <div class="comment">
-                {{post.content}}
+            <div class="comment-{{post.id}}">
+                <ul>
+                </ul>
+                <section class="input">
+                    <input id="comment_input-{{post.id}}" placeholder="댓글 달기..." type="text"/>
+                    <button onclick="onClickLike({{post.id}}, 'comment')">게시</button>
+                </section>
             </div>
         </div>
     {% endfor %}
@@ -95,7 +100,18 @@
             }
         }
         
+        const commentHandleResponse = () => {
+            const {id, type} = JSON.parse(requestLike.response);
+            const element = document.querySelector(`.comment-${id} ul`)
+            const comment = document.getElementById(`comment_input-${id}`).value
+            
+            const content = document.createElement('li');
+            const btn = document.createElement
+            element.appendChild(content);
+            content.append(comment);
 
+        }
+        
         requestLike.onreadystatechange = () => {
             if (requestLike.readyState === XMLHttpRequest.DONE){
                 const {id, type} = JSON.parse(requestLike.response);
@@ -103,10 +119,13 @@
                 if (type == 'like'){
                     likeHandleResponse();
                 }
-                else{
+                else if (type=='dislike'){
                     dislikeHandleResponse();
                 }
-            }
+                else{
+                    commentHandleResponse();
+                }
+            } 
         }
     </script>    
 </body>
