@@ -22,8 +22,11 @@ def like(request):
 
     if type == 'like':
         post.like += 1
-    else:
+    elif type == 'dislike':
         post.like -= 1
+    else:
+        post.like += 0
+
     post.save()
     return JsonResponse({'id': id, 'type': type})
 
