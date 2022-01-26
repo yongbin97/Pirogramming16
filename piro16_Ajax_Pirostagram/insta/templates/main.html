@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script defer src="{% static 'js/ajax.js' %}"></script>
+    <title>Pirostagram</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'create' %}">New post</a>
+    </header>
+
+    {% for post in posts %}
+    <div class="container-{{post.id}}">
+        <div class="header">    
+            <h3>{{post.title}}</h3>
+        </div>
+        
+        <div class="img">
+            <img src=https://picsum.photos/id/{{post.id}}/300/300 width=300, height="300">
+        </div>
+
+        <div class="content">
+            {{post.content|linebreaks}}
+        </div>
+
+
+        {% if post.status == 0 %}
+        <div class="like" onclick="onClickLike({{post.id}}, 'like')">
+            <i class="far fa-heart"></i> 
+        </div>
+        <div class="dislike" onclick="onClickLike({{post.id}}, 'dislike')" style="display:none">
+            <i class="fas fa-heart"></i> 
+        </div>
+        {% else %}
+        <div class="like" onclick="onClickLike({{post.id}}, 'like')" style="display:none">
+            <i class="far fa-heart"></i> 
+        </div>
+        <div class="dislike" onclick="onClickLike({{post.id}}, 'dislike')">
+            <i class="fas fa-heart"></i> 
+        </div>
+        {% endif %}
+
+
+        <div class="comment-container">
+            <h3>댓글</h3>
+            <div>
+                <table id="comment-table-{{post.id}}">
+                    {% for comment in post.comment_set.all %}
+                    <tr id = "comment-{{comment.id}}">
+                        <td>{{comment.content}}</td>
+                        <td>
+                            <button class="del-btn" onclick="onClickDel({{comment.id}})">삭제</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+
+            <section class="input">
+                <input id="comment_input-{{post.id}}" placeholder="댓글 달기..." type="text"/>
+                <button class="btn" onclick="onClickComment({{post.id}}, 'add')">게시</button>
+            </section>
+        </div>
+    </div>
+
+    {% endfor %}
+    
+</body>
+</html>
